@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}링크 관리{% endblock %}
+
+{% block page_name %}Manage Links{% endblock %}
+
+{% block content %}
+<section>
+    <ul class="link-list">
+        {% for link in links %}
+            <li class="{% if link['used'] %}used{% endif %}">{{ link['url'] }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('manage_links') }}" method="POST">
+        <input type="text" name="used_link" placeholder="사용된 링크를 입력하세요">
+        <button type="submit" class="btn">사용된 링크로 표시</button>
+    </form>
+</section>
+{% endblock %}

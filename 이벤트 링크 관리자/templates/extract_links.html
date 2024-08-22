@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}링크 추출{% endblock %}
+
+{% block page_name %}Extract Links{% endblock %}
+
+{% block content %}
+<section>
+    <form action="{{ url_for('extract_links') }}" method="POST">
+        <textarea name="text" rows="10" cols="50" placeholder="여기에 텍스트를 입력하세요"></textarea>
+        <div>
+            <button type="submit" class="btn">링크 추가</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
